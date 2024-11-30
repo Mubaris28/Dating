@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartMatch - Find Your Perfect Match</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-container">
+            <div class="login-box">
+                <div class="login-header">
+                    <h2>Welcome to HeartMatch</h2>
+                    <p>Find your perfect match today</p>
+                </div>
+                <div class="login-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+                <div class="login-form-container">
+                    <form id="loginForm" class="tab-content active">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required list="emailSuggestions">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="form-options">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="login-submit-btn">Login</button>
+                    </form>
+                    <form id="signupForm" class="tab-content">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Confirm Password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" class="login-submit-btn">Sign Up</button>
+                    </form>
+                </div>
+                <div class="social-login">
+                    <p>Or continue with</p>
+                    <div class="social-buttons">
+                        <a href="https://accounts.google.com/o/oauth2/v2/auth" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.facebook.com/v12.0/dialog/oauth" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://appleid.apple.com/auth/authorize" class="social-btn apple">
+                            <i class="fab fa-apple"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="logo">HeartMatch</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="#hero"><i class="fas fa-home"></i> </a>
+            <a href="#features"><i class="fas fa-star"></i></a>
+            <a href="#success-stories"><i class="fas fa-heart"></i> </a>
+            <a href="#premium-features"><i class="fas fa-crown"></i> </a>
+            <a href="#profile-examples"><i class="fas fa-users"></i> </a>
+            <button class="login-btn"><i class="fas fa-sign-in-alt"></i></button>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero"
+        style="background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    ), url('https://images.pexels.com/photos/2035066/pexels-photo-2035066.jpeg?auto=compress&cs=tinysrgb&w=800&q=60') center/cover fixed;">
+        <div class="hero-content">
+            <h1>Find Your Perfect Match</h1>
+            <p>Join millions of singles finding love every day</p>
+            <button class="cta-btn">Get Started</button>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <h2><span>Discover Love</span></h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Smart AI Matching</h3>
+                <p>Our advanced AI algorithm learns your preferences and suggests perfect matches with 94% accuracy</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Personality-based matching</li>
+                    <li><i class="fas fa-check"></i> Interest alignment</li>
+                    <li><i class="fas fa-check"></i> Behavioral compatibility</li>
+                </ul>
+                <div class="feature-stat">
+                    <span class="stat-number">94%</span>
+                    <span class="stat-label">Match Success Rate</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Advanced Security</h3>
+                <p>Your safety is our top priority with industry-leading security measures</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> ID verification</li>
+                    <li><i class="fas fa-check"></i> 24/7 profile monitoring</li>
+                    <li><i class="fas fa-check"></i> Encrypted messaging</li>
+                </ul>
+                <div class="feature-stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Verified Profiles</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Proven Success</h3>
+                <p>Join thousands of happy couples who found their perfect match</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Daily success stories</li>
+                    <li><i class="fas fa-check"></i> Personalized coaching</li>
+                    <li><i class="fas fa-check"></i> Relationship guidance</li>
+                </ul>
+                <div class="feature-stat">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Successful Matches</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="premium-features" id="premium-features">
+        <h2><span>Elite Benefits</span></h2>
+        <div class="premium-grid">
+            <div class="premium-card">
+                <i class="fas fa-star"></i>
+                <h3>Priority Matching</h3>
+                <p>Get seen by more potential matches</p>
+                <span class="premium-badge">Premium</span>
+            </div>
+            <div class="premium-card">
+                <i class="fas fa-comments"></i>
+                <h3>Unlimited Messages</h3>
+                <p>Chat without restrictions</p>
+                <span class="premium-badge">Premium</span>
+            </div>
+            <div class="premium-card">
+                <i class="fas fa-eye"></i>
+                <h3>See Who Likes You</h3>
+                <p>Know your admirers instantly</p>
+                <span class="premium-badge">Premium</span>
+            </div>
+        </div>
+        <button class="premium-btn">Upgrade to Premium</button>
+    </section>
+
+    <section class="success-stories" id="success-stories">
+        <h2><span>Love Stories</span></h2>
+        <div class="story-slider-container">
+            <button class="slider-arrow prev-arrow">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="story-carousel">
+                <div class="story-card"
+                    style="background-image: url('https://images.pexels.com/photos/3994630/pexels-photo-3994630.jpeg?auto=compress&cs=tinysrgb&w=300&q=40')">
+                    <div class="story-card-content">
+                        <h3>Sarah & John</h3>
+                        <p>"We met on HeartMatch and got married last year! The journey has been amazing."</p>
+                    </div>
+                </div>
+                <div class="story-card"
+                    style="background-image: url('https://images.pexels.com/photos/4255484/pexels-photo-4255484.jpeg?auto=compress&cs=tinysrgb&w=300&q=40')">
+                    <div class="story-card-content">
+                        <h3>Mike & Emma</h3>
+                        <p>"Found love within a month of joining! Our shared interests brought us together."</p>
+                    </div>
+                </div>
+                <div class="story-card"
+                    style="background-image: url('https://images.pexels.com/photos/5257534/pexels-photo-5257534.jpeg?auto=compress&cs=tinysrgb&w=300&q=40')">
+                    <div class="story-card-content">
+                        <h3>David & Lisa</h3>
+                        <p>"HeartMatch made our dreams come true! Perfect match from day one."</p>
+                    </div>
+                </div>
+                <div class="story-card"
+                    style="background-image: url('https://images.pexels.com/photos/4148842/pexels-photo-4148842.jpeg?auto=compress&cs=tinysrgb&w=300&q=40')">
+                    <div class="story-card-content">
+                        <h3>Alex & Maria</h3>
+                        <p>"We bonded over our love for travel! Now exploring the world together."</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <button class="slider-arrow next-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="slider-pagination"></div>
+    </section>
+
+    <section class="profile-examples" id="profile-examples">
+        <h2><span>Meet Singles</span></h2>
+        <div class="profile-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nearby">Nearby</button>
+            <button class="filter-btn" data-filter="new">New Members</button>
+            <button class="filter-btn" data-filter="online">Online Now</button>
+        </div>
+
+        <div class="profile-grid">
+            <div class="profile-example" data-category="nearby online">
+                <div class="profile-image">
+                    <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400&q=60"
+                        alt="Profile Example" loading="lazy" width="400" height="400">
+                    <span class="online-status">Online</span>
+                    <span class="distance">2 km away</span>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-header">
+                        <h3>Jessica, 28</h3>
+                        <span class="verification-badge" title="Verified Profile">
+                            <i class="fas fa-check-circle"></i>
+                        </span>
+                    </div>
+                    <p class="profile-bio">Artist & Dog Lover</p>
+                    <div class="profile-tags">
+                        <span class="tag">Art</span>
+                        <span class="tag">Travel</span>
+                        <span class="tag">Pets</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-btn like-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="action-btn message-btn">
+                            <i class="fas fa-comment"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-example" data-category="new">
+                <div class="profile-image">
+                    <img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400&q=60"
+                        alt="Profile Example" loading="lazy" width="400" height="400">
+                    <span class="member-badge">New</span>
+                    <span class="distance">5 km away</span>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-header">
+                        <h3>Michael, 32</h3>
+                        <span class="verification-badge" title="Verified Profile">
+                            <i class="fas fa-check-circle"></i>
+                        </span>
+                    </div>
+                    <p class="profile-bio">Tech Entrepreneur</p>
+                    <div class="profile-tags">
+                        <span class="tag">Tech</span>
+                        <span class="tag">Fitness</span>
+                        <span class="tag">Coffee</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-btn like-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="action-btn message-btn">
+                            <i class="fas fa-comment"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-example" data-category="nearby online">
+                <div class="profile-image">
+                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&q=60"
+                        alt="Profile Example" loading="lazy" width="400" height="400">
+                    <span class="online-status">Online</span>
+                    <span class="distance">1 km away</span>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-header">
+                        <h3>Emily, 26</h3>
+                        <span class="premium-badge" title="Premium Member">
+                            <i class="fas fa-crown"></i>
+                        </span>
+                    </div>
+                    <p class="profile-bio">Adventure Seeker</p>
+                    <div class="profile-tags">
+                        <span class="tag">Travel</span>
+                        <span class="tag">Photography</span>
+                        <span class="tag">Yoga</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-btn like-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="action-btn message-btn">
+                            <i class="fas fa-comment"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-example" data-category="nearby online">
+                <div class="profile-image">
+                    <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=400&q=60"
+                        alt="Profile Example" loading="lazy" width="400" height="400">
+                    <span class="online-status">Online</span>
+                    <span class="distance">3 km away</span>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-header">
+                        <h3>Anna, 24</h3>
+                        <span class="verification-badge" title="Verified Profile">
+                            <i class="fas fa-check-circle"></i>
+                        </span>
+                    </div>
+                    <p class="profile-bio">Music Teacher & Pianist</p>
+                    <div class="profile-tags">
+                        <span class="tag">Music</span>
+                        <span class="tag">Arts</span>
+                        <span class="tag">Teaching</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-btn like-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="action-btn message-btn">
+                            <i class="fas fa-comment"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-example" data-category="new">
+                <div class="profile-image">
+                    <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400&q=60"
+                        alt="Profile Example" loading="lazy" width="400" height="400">
+                    <span class="member-badge">New</span>
+                    <span class="distance">4 km away</span>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-header">
+                        <h3>Robert, 29</h3>
+                        <span class="verification-badge" title="Verified Profile">
+                            <i class="fas fa-check-circle"></i>
+                        </span>
+                    </div>
+                    <p class="profile-bio">Chef & Food Enthusiast</p>
+                    <div class="profile-tags">
+                        <span class="tag">Cooking</span>
+                        <span class="tag">Food</span>
+                        <span class="tag">Travel</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-btn like-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="action-btn message-btn">
+                            <i class="fas fa-comment"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-example" data-category="nearby online">
+                <div class="profile-image">
+                    <img src="https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=400&q=60"
+                        alt="Profile Example" loading="lazy" width="400" height="400">
+                    <span class="online-status">Online</span>
+                    <span class="distance">1.5 km away</span>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-header">
+                        <h3>Sofia, 27</h3>
+                        <span class="premium-badge" title="Premium Member">
+                            <i class="fas fa-crown"></i>
+                        </span>
+                    </div>
+                    <p class="profile-bio">Yoga Instructor</p>
+                    <div class="profile-tags">
+                        <span class="tag">Yoga</span>
+                        <span class="tag">Fitness</span>
+                        <span class="tag">Wellness</span>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-btn like-btn">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="action-btn message-btn">
+                            <i class="fas fa-comment"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-pagination">
+            <button class="load-more-btn">
+                <i class="fas fa-sync"></i> Load More Singles
+            </button>
+        </div>
+    </section>
+
+    <section class="user-reviews">
+        <h2><span>Happy Hearts</span></h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="user-avatar">
+                        <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100&q=60"
+                            alt="User">
+                    </div>
+                    <div class="user-info">
+                        <h4>Sarah Johnson</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Found my soulmate within weeks! The matching algorithm is incredible."</p>
+                <span class="review-date">2 days ago</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="user-avatar">
+                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <h4>Michael Chen</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"The best dating app I've ever used. Very user-friendly and secure."</p>
+                <span class="review-date">1 week ago</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="user-avatar">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="User">
+                    </div>
+                    <div class="user-info">
+                        <h4>Emily Davis</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Met amazing people here. The verification process makes it very safe."</p>
+                <span class="review-date">3 days ago</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-download">
+        <h2><span>Love On The Go</span></h2>
+        <div class="app-container">
+            <div class="app-content">
+                <h3>Find Love On The Go</h3>
+                <p>Download our mobile app and take your dating journey anywhere. Available for iOS and Android.</p>
+                <div class="app-features">
+                    <div class="app-feature">
+                        <i class="fas fa-bell"></i>
+                        <span>Instant Notifications</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Location-based Matching</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-video"></i>
+                        <span>Video Chat</span>
+                    </div>
+                </div>
+                <div class="app-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">1M+</span>
+                        <span class="stat-label">Downloads</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.8</span>
+                        <span class="stat-label">App Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                </div>
+                <div class="store-buttons">
+                    <a href="#" class="store-btn">
+                        <i class="fab fa-apple"></i>
+                        <div class="store-btn-text">
+                            <span>Download on the</span>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="store-btn">
+                        <i class="fab fa-google-play"></i>
+                        <div class="store-btn-text">
+                            <span>Get it on</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="app-mockup">
+                <img src="https://images.pexels.com/photos/6214476/pexels-photo-6214476.jpeg?auto=compress&cs=tinysrgb&w=600&q=60"
+                    alt="Mobile App">
+            </div>
+        </div>
+    </section>
+
+    <section class="app-features-showcase">
+        <h2><span>App Features</span></h2>
+        <div class="features-showcase-container">
+            <div class="features-content">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-details">
+                        <h3>Secure & Private</h3>
+                        <p>Your privacy is our top priority with end-to-end encryption</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="feature-details">
+                        <h3>Real-time Matching</h3>
+                        <p>Get instant matches based on your preferences</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="feature-details">
+                        <h3>Video Chat</h3>
+                        <p>Connect safely with potential matches via video call</p>
+                    </div>
+                </div>
+            </div>
+            <div class="features-image">
+                <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600&q=60"
+                    alt="App Features">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>HeartMatch</h3>
+                <p>Finding love made simple. Join millions of singles in their journey to find meaningful relationships.
+                </p>
+                <div class="social-links">
+                    <a href="https://facebook.com/heartmatch" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/heartmatch" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/heartmatch" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/company/heartmatch" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#features">About Us</a></li>
+                    <li><a href="#premium-features">Premium</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/help-center">Help Center</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Download App</h4>
+                <div class="app-buttons">
+                    <a href="https://apps.apple.com/app/heartmatch" class="app-button" target="_blank">
+                        <i class="fab fa-apple"></i>
+                        <span>
+                            Download on the<br>
+                            <strong>App Store</strong>
+                        </span>
+                    </a>
+                    <a href="https://play.google.com/store/apps/heartmatch" class="app-button" target="_blank">
+                        <i class="fab fa-google-play"></i>
+                        <span>
+                            Get it on<br>
+                            <strong>Google Play</strong>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 HeartMatch. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+                <a href="/cookies">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Login/Signup tab switching
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const loginOverlay = document.getElementById('loginOverlay');
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            // Get form elements
+            const loginEmail = loginForm.querySelector('input[type="email"]');
+            const loginPassword = loginForm.querySelector('input[type="password"]');
+            const loginRememberMe = loginForm.querySelector('input[type="checkbox"]');
+
+            const signupName = signupForm.querySelector('input[type="text"]');
+            const signupEmail = signupForm.querySelector('input[type="email"]');
+            const signupPassword = signupForm.querySelector('input[type="password"]');
+            const signupConfirmPassword = signupForm.querySelectorAll('input[type="password"]')[1];
+
+            // Load saved credentials if they exist
+            function loadSavedCredentials() {
+                const savedEmail = localStorage.getItem('userEmail');
+                const savedPassword = localStorage.getItem('userPassword');
+                const rememberMe = localStorage.getItem('rememberMe');
+
+                if (savedEmail && rememberMe === 'true') {
+                    loginEmail.value = savedEmail;
+                    loginRememberMe.checked = true;
+                }
+                if (savedPassword && rememberMe === 'true') {
+                    loginPassword.value = savedPassword;
+                }
+            }
+
+            // Save credentials if remember me is checked
+            function saveCredentials(email, password, remember) {
+                if (remember) {
+                    localStorage.setItem('userEmail', email);
+                    localStorage.setItem('userPassword', password);
+                    localStorage.setItem('rememberMe', 'true');
+                } else {
+                    localStorage.removeItem('userEmail');
+                    localStorage.removeItem('userPassword');
+                    localStorage.setItem('rememberMe', 'false');
+                }
+            }
+
+            // Save user data from signup
+            function saveUserData(name, email, password) {
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                users.push({ name, email, password });
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+
+            // Check if user exists
+            function checkUser(email, password) {
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                return users.find(user => user.email === email && user.password === password);
+            }
+
+            // Load saved credentials on page load
+            loadSavedCredentials();
+
+            // Tab switching
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.querySelector(`#${btn.dataset.tab}Form`).classList.add('active');
+                });
+            });
+
+            // Login form submission
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = loginEmail.value;
+                const password = loginPassword.value;
+                const remember = loginRememberMe.checked;
+
+                const user = checkUser(email, password);
+                if (user) {
+                    saveCredentials(email, password, remember);
+                    loginOverlay.style.display = 'none';
+                    // Add success message or redirect
+                    alert('Login successful!');
+                } else {
+                    alert('Invalid email or password');
+                }
+            });
+
+            // Signup form submission
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = signupName.value;
+                const email = signupEmail.value;
+                const password = signupPassword.value;
+                const confirmPassword = signupConfirmPassword.value;
+
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (users.some(user => user.email === email)) {
+                    alert('Email already registered!');
+                    return;
+                }
+
+                saveUserData(name, email, password);
+                saveCredentials(email, password, true);
+                loginOverlay.style.display = 'none';
+                alert('Signup successful! You can now login.');
+            });
+
+            // Email suggestions
+            loginEmail.addEventListener('input', function () {
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                const value = this.value.toLowerCase();
+
+                // Create or get datalist
+                let datalist = document.getElementById('emailSuggestions');
+                if (!datalist) {
+                    datalist = document.createElement('datalist');
+                    datalist.id = 'emailSuggestions';
+                    this.after(datalist);
+                }
+
+                // Clear and populate suggestions
+                datalist.innerHTML = '';
+                users.forEach(user => {
+                    if (user.email.toLowerCase().includes(value)) {
+                        const option = document.createElement('option');
+                        option.value = user.email;
+                        datalist.appendChild(option);
+                    }
+                });
+            });
+
+            // Navigation functionality
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const loginBtn = document.querySelector('.login-btn');
+
+            // Toggle mobile menu
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Show login overlay when login button is clicked
+            loginBtn.addEventListener('click', () => {
+                document.getElementById('loginOverlay').style.display = 'flex';
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Story slider functionality
+            document.addEventListener('DOMContentLoaded', function () {
+                const storyCarousel = document.querySelector('.story-carousel');
+                const prevArrow = document.querySelector('.prev-arrow');
+                const nextArrow = document.querySelector('.next-arrow');
+                const storyCards = document.querySelectorAll('.story-card');
+                const paginationContainer = document.querySelector('.slider-pagination');
+
+                let currentIndex = 0;
+                let cardWidth;
+                let cardsToShow;
+                let maxIndex;
+                let autoplayInterval;
+
+                // Calculate dimensions
+                function updateDimensions() {
+                    const containerWidth = document.querySelector('.story-slider-container').offsetWidth - 120;
+
+                    // Determine cards to show based on screen width
+                    if (window.innerWidth >= 1200) {
+                        cardsToShow = 3;
+                    } else if (window.innerWidth >= 768) {
+                        cardsToShow = 2;
+                    } else {
+                        cardsToShow = 1;
+                    }
+
+                    cardWidth = (containerWidth / cardsToShow);
+                    maxIndex = storyCards.length - cardsToShow;
+
+                    // Update card widths
+                    storyCards.forEach(card => {
+                        card.style.width = `${cardWidth - 20}px`;
+                        card.style.marginRight = '20px';
+                    });
+
+                    currentIndex = Math.min(currentIndex, maxIndex);
+                    slideToIndex(currentIndex, false);
+                    updatePagination();
+                }
+
+                // Create pagination
+                function createPagination() {
+                    paginationContainer.innerHTML = '';
+                    const totalDots = maxIndex + 1;
+
+                    for (let i = 0; i < totalDots; i++) {
+                        const dot = document.createElement('button');
+                        dot.classList.add('pagination-dot');
+                        if (i === currentIndex) dot.classList.add('active');
+                        dot.addEventListener('click', () => slideToIndex(i));
+                        paginationContainer.appendChild(dot);
+                    }
+                }
+
+                // Update pagination
+                function updatePagination() {
+                    const dots = document.querySelectorAll('.pagination-dot');
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                // Slide to index
+                function slideToIndex(index, animate = true) {
+                    currentIndex = Math.max(0, Math.min(index, maxIndex));
+
+                    if (!animate) {
+                        storyCarousel.style.transition = 'none';
+                    } else {
+                        storyCarousel.style.transition = 'transform 0.5s ease-in-out';
+                    }
+
+                    const translateX = currentIndex * (cardWidth);
+                    storyCarousel.style.transform = `translateX(-${translateX}px)`;
+
+                    if (!animate) {
+                        storyCarousel.offsetHeight;
+                        storyCarousel.style.transition = 'transform 0.5s ease-in-out';
+                    }
+
+                    updateArrowVisibility();
+                    updatePagination();
+                }
+
+                // Update arrow visibility
+                function updateArrowVisibility() {
+                    prevArrow.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                    nextArrow.style.opacity = currentIndex === maxIndex ? '0.5' : '1';
+                    prevArrow.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+                    nextArrow.style.pointerEvents = currentIndex === maxIndex ? 'none' : 'auto';
+                }
+
+                // Autoplay functionality
+                function startAutoplay() {
+                    stopAutoplay();
+                    autoplayInterval = setInterval(() => {
+                        if (currentIndex === maxIndex) {
+                            slideToIndex(0);
+                        } else {
+                            slideToIndex(currentIndex + 1);
+                        }
+                    }, 5000); // Change slide every 5 seconds
+                }
+
+                function stopAutoplay() {
+                    if (autoplayInterval) {
+                        clearInterval(autoplayInterval);
+                    }
+                }
+
+                // Event listeners
+                prevArrow.addEventListener('click', () => {
+                    stopAutoplay();
+                    if (currentIndex > 0) {
+                        slideToIndex(currentIndex - 1);
+                    }
+                });
+
+                nextArrow.addEventListener('click', () => {
+                    stopAutoplay();
+                    if (currentIndex < maxIndex) {
+                        slideToIndex(currentIndex + 1);
+                    }
+                });
+
+                // Touch support
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                storyCarousel.addEventListener('touchstart', e => {
+                    stopAutoplay();
+                    touchStartX = e.changedTouches[0].screenX;
+                    storyCarousel.style.transition = 'none';
+                });
+
+                storyCarousel.addEventListener('touchmove', e => {
+                    const currentTouch = e.changedTouches[0].screenX;
+                    const diff = touchStartX - currentTouch;
+                    if (Math.abs(diff) < cardWidth) {
+                        storyCarousel.style.transform = `translateX(-${(currentIndex * cardWidth) + diff}px)`;
+                    }
+                });
+
+                storyCarousel.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    const diff = touchStartX - touchEndX;
+
+                    storyCarousel.style.transition = 'transform 0.5s ease-in-out';
+
+                    if (Math.abs(diff) > cardWidth / 3) {
+                        if (diff > 0 && currentIndex < maxIndex) {
+                            slideToIndex(currentIndex + 1);
+                        } else if (diff < 0 && currentIndex > 0) {
+                            slideToIndex(currentIndex - 1);
+                        } else {
+                            slideToIndex(currentIndex);
+                        }
+                    } else {
+                        slideToIndex(currentIndex);
+                    }
+                    startAutoplay();
+                });
+
+                // Pause autoplay on hover
+                storyCarousel.addEventListener('mouseenter', stopAutoplay);
+                storyCarousel.addEventListener('mouseleave', startAutoplay);
+
+                // Handle window resize
+                let resizeTimer;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(() => {
+                        updateDimensions();
+                        createPagination();
+                    }, 250);
+                });
+
+                // Initialize
+                updateDimensions();
+                createPagination();
+                startAutoplay();
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Initialize ScrollReveal
+        ScrollReveal({
+            reset: false,
+            distance: '60px',
+            duration: 1500,
+            delay: 200,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)'
+        });
+
+        // Reveal animations for different sections
+        ScrollReveal().reveal('.hero-content', {
+            delay: 300,
+            origin: 'bottom'
+        });
+
+        ScrollReveal().reveal('.feature-card', {
+            delay: 200,
+            origin: 'bottom',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.premium-card', {
+            delay: 200,
+            origin: 'bottom',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.story-card', {
+            delay: 200,
+            origin: 'bottom',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.profile-example', {
+            delay: 200,
+            origin: 'bottom',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.review-card', {
+            delay: 200,
+            origin: 'bottom',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.app-content', {
+            delay: 300,
+            origin: 'left'
+        });
+
+        ScrollReveal().reveal('.app-mockup', {
+            delay: 300,
+            origin: 'right'
+        });
+
+        ScrollReveal().reveal('.feature-item', {
+            delay: 200,
+            origin: 'left',
+            interval: 200
+        });
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    <div class="chatbot-widget">
+        <div class="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="notification-badge">1</span>
+        </div>
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <h3>HeartMatch Assistant</h3>
+                <div class="chatbot-controls">
+                    <button class="minimize-btn"><i class="fas fa-minus"></i></button>
+                    <button class="close-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot">
+                    <div class="avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="content">
+                        <p>👋 Hi! I'm your HeartMatch assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message...">
+                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
