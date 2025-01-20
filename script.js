@@ -381,40 +381,177 @@ function initializeGetStarted() {
 function initializeChatbot() {
     const chatbotToggle = document.querySelector('.chatbot-toggle');
     const chatbotContainer = document.querySelector('.chatbot-container');
+    const chatInput = document.querySelector('.chatbot-input input');
+    const sendBtn = document.querySelector('.send-btn');
+    const messagesContainer = document.querySelector('.chatbot-messages');
     const minimizeBtn = document.querySelector('.minimize-btn');
     const closeBtn = document.querySelector('.close-btn');
-    const notificationBadge = document.querySelector('.notification-badge');
 
-    // Toggle chatbot
-    chatbotToggle.addEventListener('click', () => {
-        chatbotContainer.classList.toggle('active');
-        if (notificationBadge) {
-            notificationBadge.style.display = 'none';
+    let isOpen = false;
+
+    // Predefined responses for common questions
+    const responses = {
+        greetings: [
+            "Hello! How can I help you today?",
+            "Hi there! Welcome to HeartMatch. What can I assist you with?",
+            "Welcome! How may I help you find your perfect match?"
+        ],
+        premium: [
+            "Our Premium membership includes:\n- Unlimited messaging\n- See who likes you\n- Advanced filters\n- Priority matching\n\nWould you like to learn more about pricing?",
+        ],
+        safety: [
+            "Your safety is our top priority. We have:\n- Profile verification\n- 24/7 monitoring\n- Secure messaging\n- Report system\n\nRead more about our safety measures in our Safety Center.",
+        ],
+        account: [
+            "To create an account:\n1. Click 'Get Started'\n2. Fill in your details\n3. Verify your email\n4. Complete your profile\n\nNeed help with registration?",
+        ],
+        default: [
+            "I'll connect you with our support team for more detailed assistance. In the meantime, you can check our FAQ section.",
+            "Let me help you with that. Could you please provide more details about your question?",
+            "I understand your question. Would you like me to connect you with a human representative?"
+        ]
+    };
+
+    function getResponse(message) {
+        const msg = message.toLowerCase();
+        
+        if (msg.includes('hi') || msg.includes('hello') || msg.includes('hey')) {
+            return getRandomResponse(responses.greetings);
+        }
+        else if (msg.includes('premium') || msg.includes('membership') || msg.includes('subscribe')) {
+            return getRandomResponse(responses.premium);
+        }
+        else if (msg.includes('safe') || msg.includes('security') || msg.includes('protect')) {
+            return getRandomResponse(responses.safety);
+        }
+        else if (msg.includes('account') || msg.includes('register') || msg.includes('sign up')) {
+            return getRandomResponse(responses.account);
+        }
+        return getRandomResponse(responses.default);
+    }
+
+    function getRandomResponse(responses) {
+        return responses[Math.floor(Math.random() * responses.length)];
+    }
+
+    function toggleChatbot() {
+        isOpen = !isOpen;
+        chatbotContainer.style.display = isOpen ? 'block' : 'none';
+        if (isOpen) {
+            const badge = document.querySelector('.notification-badge');
+            if (badge) badge.style.display = 'none';
+            // Auto-focus the input when opening
+            chatInput.focus();
+        }
+    }
+
+    function sendMessage(message) {
+        if (!message.trim()) return;
+
+        // Add user message
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'message user';
+        userMessageDiv.innerHTML = `
+            <div class="content">
+                <p>${message}</p>
+                <span class="time">${new Date().toLocaleTimeString()}</span>
+            </div>
+        `;
+        messagesContainer.appendChild(userMessageDiv);
+
+        // Show typing indicator
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message bot';
+        typingDiv.innerHTML = `
+            <div class="avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="content">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        `;
+        messagesContainer.appendChild(typingDiv);
+
+        // Scroll to bottom
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        // Get appropriate response
+        const botResponse = getResponse(message);
+
+        // Simulate bot response after typing delay
+        setTimeout(() => {
+            messagesContainer.removeChild(typingDiv);
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot';
+            botMessageDiv.innerHTML = `
+                <div class="avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="content">
+                    <p>${botResponse}</p>
+                    <span class="time">${new Date().toLocaleTimeString()}</span>
+                </div>
+            `;
+            messagesContainer.appendChild(botMessageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Add suggested actions if available
+            if (message.toLowerCase().includes('premium')) {
+                addSuggestedActions(['View Pricing', 'Compare Plans', 'Start Free Trial']);
+            } else if (message.toLowerCase().includes('account')) {
+                addSuggestedActions(['Create Account', 'Reset Password', 'Contact Support']);
+            }
+        }, 1000);
+
+        // Clear input
+        chatInput.value = '';
+    }
+
+    function addSuggestedActions(actions) {
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'suggested-actions';
+        actionsDiv.innerHTML = actions.map(action => 
+            `<button class="action-btn">${action}</button>`
+        ).join('');
+        messagesContainer.appendChild(actionsDiv);
+        
+        // Add click handlers for suggested actions
+        actionsDiv.querySelectorAll('.action-btn').forEach(btn => {
+            btn.addEventListener('click', () => sendMessage(btn.textContent));
+        });
+    }
+
+    // Event listeners
+    chatbotToggle.addEventListener('click', toggleChatbot);
+    minimizeBtn.addEventListener('click', toggleChatbot);
+    closeBtn.addEventListener('click', toggleChatbot);
+
+    sendBtn.addEventListener('click', () => sendMessage(chatInput.value));
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage(chatInput.value);
         }
     });
 
-    // Minimize chatbot
-    minimizeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        chatbotContainer.classList.remove('active');
-    });
-
-    // Close chatbot
-    closeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        chatbotContainer.classList.remove('active');
-    });
-
-    // Prevent closing when clicking inside chat
-    chatbotContainer.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-
-    // Close chat when clicking outside
+    // Close chatbot when clicking outside
     document.addEventListener('click', (e) => {
-        if (!chatbotContainer.contains(e.target) && 
+        if (isOpen && 
+            !chatbotContainer.contains(e.target) && 
             !chatbotToggle.contains(e.target)) {
-            chatbotContainer.classList.remove('active');
+            toggleChatbot();
+        }
+    });
+
+    // Add welcome message when chat is first opened
+    chatbotToggle.addEventListener('click', () => {
+        if (!messagesContainer.children.length) {
+            setTimeout(() => {
+                sendMessage("Hi! 👋");
+            }, 500);
         }
     });
 }
